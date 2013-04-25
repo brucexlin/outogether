@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <title>Get your restaurant</title>
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+        <script type="text/javascript" src="js/angular-google-maps.js"></script>
+        <script type="text/javascript" src="js/restaurant.js"></script>
+        <script type="text/javascript" src="js/components.js"></script>
+        <script type="text/javascript" src="js/myApp.js"></script>
+        <link rel="stylesheet" href="css/life.css" />
+        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+    </head>
+    <body>
+        <tabs>
+            <pane title="Food">
+                <div ng-controller="Restaurant">
+                    <div class="ButtonDiv">
+                       <input type="button" ng-click="getRestaurant()" class="ChooseButton" value="WHERE TO EAT"></input>
+                    </div>
+                    <div class="RestaurantInfo">
+                        <span class="name">{{ randomRestaurant.name }}</span>
+                        <span class="address">Address: {{ randomRestaurant.address }}</span>
+                        <span class="phone">Phone Number: {{ randomRestaurant.phone }}</span>
+                    </div>
+
+	                <div class="google-map" 
+		                center="centerProperty"
+		                zoom="zoomProperty" 
+		                markers="markersProperty"
+		                latitude="clickedLatitudeProperty"
+		                longitude="clickedLongitudeProperty"
+		                mark-click="true"
+		                draggable="true"
+		                style="height: 400px; width: 70%">
+	                </div>
+
+                    <div class ="FullList">
+                        <a href="#" ng-click="hideList()">{{ fullList.Action }}</a>
+                        <div ng-show="fullList.ShowFullList">
+                            <ul>
+                                <li ng-repeat="restaurant in restaurants">
+                                    <span>{{ restaurant.name }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </pane>
+            <pane title="Movie">
+            </pane>
+        </tabs>
+    </body>
+</html>
