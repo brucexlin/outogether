@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424065148) do
+ActiveRecord::Schema.define(:version => 20130429005436) do
+
+  create_table "ghost_games", :force => true do |t|
+    t.integer  "word_length"
+    t.string   "real_word"
+    t.string   "fake_word"
+    t.string   "game_status"
+    t.string   "who_wins"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

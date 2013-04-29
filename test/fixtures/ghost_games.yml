@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  word_length: 1
+  real_word: MyString
+  fake_word: MyString
+  game_status: MyString
+  who_wins: MyString
+
+two:
+  word_length: 1
+  real_word: MyString
+  fake_word: MyString
+  game_status: MyString
+  who_wins: MyString
